@@ -35,4 +35,4 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: hlabs/demo-manifest:latest
+          tags: hlabs/housley_bouncer:latest
