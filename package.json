@@ -1,0 +1,23 @@
+{
+  "name": "housley-bouncer",
+  "version": "1.0.0",
+  "description": "A bouncing image screensaver using Material UI",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": ["screensaver", "bounce", "material-ui", "animation"],
+  "author": "Housley AI",
+  "license": "MIT"
+}

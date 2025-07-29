@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housley Bouncer Screensaver</title>
+    
+    <!-- Material UI CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mui/material@5.14.1/index.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="screensaver-container">
+        <h1 class="main-title">Housley Bouncer</h1>
+        <div id="bouncing-image">
+            <img src="housley_logo.png" alt="Housley Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn" id="playPauseBtn" onclick="toggleAnimation()">
+                <span class="material-icons">pause</span>
+                <span id="playPauseText">Pause</span>
+            </button>
+            <div class="speed-control">
+                <button class="speed-btn speed-down" onclick="decreaseSpeed()">
+                    <span class="material-icons">remove</span>
+                </button>
+                <span class="speed-label">Speed <span id="speedDisplay">10</span></span>
+                <button class="speed-btn speed-up" onclick="increaseSpeed()">
+                    <span class="material-icons">add</span>
+                </button>
+            </div>
+            <button class="control-btn" onclick="toggleTrail()">
+                <span class="material-icons">brush</span>
+                Trail
+            </button>
+        </div>
+
+        <div class="logo-panel">
+            <img src="housley_logo_full.png" alt="Housley Full Logo">
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

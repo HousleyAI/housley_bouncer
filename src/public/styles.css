@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    overflow: hidden;
+    cursor: none;
+}
+
+#screensaver-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    border: 3px solid #333;
+}
+
+.main-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: left;
+    z-index: 500;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: 2px;
+}
+
+#bouncing-image {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    /* Make it circular again */
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+    transition: box-shadow 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden;
+    z-index: 10; /* Ensure image is above trail */
+}
+
+#bouncing-image.impact {
+    box-shadow: 0 0 40px rgba(255, 107, 107, 1);
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.control-btn {
+    background: #666666; /* Grey background for pause/trail buttons */
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}
+
+.control-btn:hover {
+    background: #555555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 102, 102, 0.4);
+}
+
+.control-btn.danger {
+    background: #d32f2f;
+}
+
+.control-btn.danger:hover {
+    background: #c62828;
+}
+
+.control-btn.success {
+    background: #2e7d32;
+}
+
+.control-btn.success:hover {
+    background: #1b5e20;
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    background: #666666; /* Grey background for middle section */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}
+
+.speed-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 12px 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    min-width: 40px;
+}
+
+.speed-btn.speed-down {
+    background: #d32f2f; /* Red for decrease */
+}
+
+.speed-btn.speed-up {
+    background: #2e7d32; /* Green for increase */
+}
+
+.speed-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.speed-btn.speed-down:hover {
+    background: #c62828;
+}
+
+.speed-btn.speed-up:hover {
+    background: #1b5e20;
+}
+
+.speed-btn:active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.speed-label {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 0 12px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.logo-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    width: 750px;
+    height: auto;
+}
+
+.logo-panel img {
+    width: 100%;
+    height: auto;
+    opacity: 0.7;
+    border-radius: 10px;
+}
+
+.color-trail {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: fadeOut 1s forwards;
+    z-index: 1;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.material-icons {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .logo-panel {
+        bottom: 10px;
+        left: 10px;
+        width: 560px;
+    }
+
+    #bouncing-image {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+    }
+
+    .main-title {
+        font-size: 3rem;
+        letter-spacing: 1px;
+        top: 10px;
+        left: 10px;
+    }
+}

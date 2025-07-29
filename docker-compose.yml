@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  housley-bouncer:
+    container_name: housley-bouncer-app
+    image: housley-bouncer-image:latest
+    hostname: housley-bouncer
+    restart: unless-stopped
+
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+
+    environment:
+      - NODE_ENV=development
+
+    ports:
+      - "8080:8080"
+
